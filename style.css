@@ -1,0 +1,280 @@
+/* Under the Cipher — shared stylesheet */
+
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg: #0e0f12;
+  --surface: #17181c;
+  --surface-2: #1d1f24;
+  --text: #ecebe4;
+  --text-muted: #98958c;
+  --rule: #2a2c31;
+  --accent-fact: #c9a227;
+  --accent-theory: #8b93d9;
+  --max-w: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Nav / chrome ---------- */
+
+.chrome {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.site-header {
+  padding: 28px 0 0;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mark {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--rule);
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+
+.mark:hover { border-color: var(--text-muted); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+}
+
+.hero-title .glyph {
+  display: inline-block;
+  min-width: 0.62em;
+}
+
+.hero-tagline {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--accent-fact);
+  text-transform: uppercase;
+  margin: 0 0 22px;
+}
+
+.hero-intro {
+  max-width: 58ch;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+/* ---------- Legend ---------- */
+
+.legend {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 14px 0;
+  margin: 24px 0 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.legend-item { display: flex; align-items: center; gap: 7px; }
+
+.legend-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.fact { background: var(--accent-fact); }
+.legend-dot.theory { background: var(--accent-theory); }
+
+/* ---------- Article list ---------- */
+
+.log {
+  padding: 40px 0 80px;
+}
+
+.entry {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  transition: opacity 0.15s ease;
+}
+
+.entry:hover { opacity: 0.72; }
+
+.entry-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent-fact);
+}
+
+.entry-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  margin: 6px 0 8px;
+}
+
+.entry-teaser {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 62ch;
+}
+
+/* ---------- Article page ---------- */
+
+.article-header {
+  padding: 56px 0 0;
+}
+
+.back-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+
+.back-link:hover { color: var(--text); }
+
+.article-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--accent-fact);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-family: 'Clash Display', sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 6vw, 48px);
+  line-height: 1.05;
+  margin: 0 0 32px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 32px;
+}
+
+.article-body { padding: 8px 0 60px; }
+
+.article-body p {
+  margin: 0 0 1.4em;
+}
+
+.article-body blockquote {
+  margin: 1.6em 0;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent-fact);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.fact, .theory {
+  border-bottom: 1.5px solid;
+  padding-bottom: 0.5px;
+}
+
+.fact { border-color: var(--accent-fact); }
+.theory { border-color: var(--accent-theory); border-style: dashed; }
+
+.article-footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 0 70px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.article-footer a { text-decoration: none; color: inherit; }
+.article-footer a:hover { color: var(--text); }
+
+/* ---------- Legend toggle (JS) ---------- */
+
+.legend-toggle {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.legend-toggle:hover { border-color: var(--text-muted); color: var(--text); }
+
+.legend[hidden] { display: none; }
+
+/* ---------- Focus & motion ---------- */
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent-fact);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 17px; }
+  .hero { padding: 44px 0 32px; }
+  .legend { flex-wrap: wrap; gap: 12px 20px; }
+}
